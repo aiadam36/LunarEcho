@@ -3,6 +3,7 @@ const { REST, Routes } = require('discord.js');
 const fs = require('fs');
 
 const token = process.env.TOKEN;
+const clientId = process.env.CLIENT_ID;
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -16,7 +17,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 (async () => {
     try {
         console.log('Refreshing application (/) commands...');
-        await rest.put(Routes.applicationCommands('1354758755711057970'), { body: commands });
+        await rest.put(Routes.applicationCommands(clientId), { body: commands });
         console.log('Successfully reloaded commands!');
     } catch (error) {
         console.error(error);

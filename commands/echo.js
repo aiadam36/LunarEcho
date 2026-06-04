@@ -10,7 +10,7 @@ module.exports = {
                 .setRequired(true))
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     async execute(interaction) {
-        const ownerId = '838216841973334057';
+        const ownerId = process.env.OWNER_ID;
         if (interaction.user.id !== ownerId) {
             return interaction.reply({ content: "You don't have permission to use this command.", ephemeral: true });
         }
