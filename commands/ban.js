@@ -16,7 +16,7 @@ module.exports = {
     async execute(interaction) {
         const user = interaction.options.getUser('target');
         const reason = interaction.options.getString('reason') || 'No reason provided';
-        const member = interaction.guild.members.cache.get(user.id);
+        const member = await interaction.guild.members.fetch(user.id).catch(() => null);
 
         if (!member) {
             return interaction.reply({ content: 'User not found in this server!', ephemeral: true });
