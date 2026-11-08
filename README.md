@@ -2,6 +2,14 @@
 
 A Discord bot built with discord.js v14, featuring moderation, utility, and fun slash commands.
 
+## Project History
+
+LunarEcho has been around since March 2025, originally developed and maintained privately before becoming open-source.
+
+The current repository was recreated to give the project a clean, documented starting point for public development.
+
+Read more about its history in [ORIGIN.md](ORIGIN.md).
+
 ## Installation
 
 1. Clone the repository and install dependencies:
